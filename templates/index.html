@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>News APP</title>
+</head>
+<body>
+    <h1> Liste as principais noticias
+    </h1>
+ 
+    <form action='/results/' method="POST">
+        <input type="text" placeholder="Digite o texto de busca" name='keyword'>
+        <button type="submit">Obter noticia</button>
+ 
+ 
+    </form>
+ 
+ 
+{% for post in news %}
+  <h2>{{post['title']}}</h2>
+  <i>{{post['publishedAt']}}</i>
+  <p>{{post['description']}}</p>
+{% endfor %}
+    
+     
+</body>
+</html>
